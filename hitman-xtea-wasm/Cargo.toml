@@ -29,7 +29,7 @@ debugging = []
 
 # Backbone
 [dependencies.hitman-xtea]
-path = "../../hitman-xtea"
+path = "../hitman-xtea"
 default-features = false
 features = ["file-helpers"]
 
