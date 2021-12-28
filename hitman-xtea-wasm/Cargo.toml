@@ -1,0 +1,52 @@
+[package]
+name = "hitman-wasm-xtea"
+version = "0.1.1"
+authors = ["A.W. Stanley <aws@reversing.space>"]
+edition = "2018"
+license = "Zlib"
+publish = false
+
+description = """
+Simple `packagedefinition.txt`/`thumbs.dat` processor code (WASM).
+"""
+
+include = [
+    "src/lib.rs",
+    "Cargo.toml",
+    "CHANGES.md",
+    "README.md",
+]
+
+# Output (so we get the pretty name)
+[lib]
+crate-type = ["cdylib"]
+name = "hitwasm_xtea"
+
+# Feature guard to enable debugging easily
+[features]
+default = []
+debugging = []
+
+# Backbone
+[dependencies.hitman-xtea]
+path = "../../hitman-xtea"
+default-features = false
+features = ["file-helpers"]
+
+# Debugging output
+[target.'cfg(feature="debugging")'.dependencies.console_error_panic_hook]
+version = "0.1.6"
+
+# WASM output
+[dependencies.wasm-bindgen]
+version = "0.2.42"
+
+# Debug
+[dev-dependencies.wasm-bindgen-test]
+version = "0.2"
+
+# Make the binary significantly less terrifying mobile systems,
+# wireless connections, and ADSL connections like mine.
+#[profile.release]
+#lto = true
+#opt-level = 'z'
