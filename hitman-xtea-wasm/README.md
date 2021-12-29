@@ -1,6 +1,6 @@
 # Hitman Package Definition Viewer/Editor (WASM)
 
-Simple viewer/editor for Hitman 2016/2016 `packagedefinitions.txt` (and `thumbs.dat`).  Leverages the [`hitman-xtea`](../..hitman-xtea) crate and provides a simple softare CRC32 implementation to allow your browser to do the work.
+Simple viewer/editor for Hitman 2016/2016 `packagedefinitions.txt` (and `thumbs.dat`).  Leverages the [`hitman-xtea`](../hitman-xtea) crate and provides a simple softare CRC32 implementation to allow your browser to do the work.
 
 Still requires a heap of browser related work on the other end, which is way less pleasant.
 
